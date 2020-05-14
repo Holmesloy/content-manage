@@ -10,7 +10,17 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    // 设置跨域
+    proxyTable: {
+      '/api': {
+        target: 'http://localhost:3000', // 请求远程服务器
+        //target: 'http://10.9.35.238:8067', // 请求远程服务器
+        //target: 'http://10.10.133.52:8080', // 请求远程服务器
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: { "^/api": "" }
+    }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -65,5 +75,6 @@ module.exports = {
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
     bundleAnalyzerReport: process.env.npm_config_report
-  }
+  },
+
 }

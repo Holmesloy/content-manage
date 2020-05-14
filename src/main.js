@@ -3,6 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+
+var url = process.env.API
+axios.get(url)
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 
 Vue.config.productionTip = false
 
@@ -13,3 +23,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
