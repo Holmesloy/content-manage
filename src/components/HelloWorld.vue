@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <el-input v-model="input" placeholder="hello element"></el-input>
+    <el-button type="primary">Go</el-button>
     <h2>Essential Links</h2>
     <ul>
       <li>
