@@ -1,0 +1,483 @@
+// 滚动条样式
+::-webkit-scrollbar {
+    width: 0px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 12px;
+    font-family: MicrosoftYaHei,sans-serif;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+}
+
+iframe {
+    width: 100%;
+    height: calc(100% - 60px);
+}
+
+.center {
+    text-align: center;
+}
+
+// --------------------width&height-----------------
+.w100 {
+    width: 100px !important;
+}
+
+.h50 {
+    height: 50px !important;
+}
+
+.h40 {
+    height: 40px !important;
+}
+
+.scroll-y {
+    overflow-y: auto;
+}
+
+// --------------------margin&padding-----------------
+.pl10 {
+    padding-left: 10px;
+}
+
+.pl50 {
+    padding-left: 50px;
+}
+
+.pl60 {
+    padding-left: 60px;
+}
+
+.pt20 {
+    padding-top: 20px;
+}
+
+.mlr5 {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.mr5 {
+    margin-right: 5px;
+}
+
+.mr10 {
+    margin-right: 10px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb60 {
+    margin-bottom: 60px;
+}
+
+// --------------------- 字体大小 ---------------------
+.blod {
+    font-weight: bold;
+}
+
+.f14 {
+    font-size: 14px !important;
+}
+
+.f16 {
+    font-size: 16px !important;
+}
+
+.f18 {
+    font-size: 18px !important;
+}
+
+.f20 {
+    font-size: 20px !important;
+}
+
+
+.f30 {
+    font-size: 30px !important;
+}
+
+// --------------------- 字体颜色 ---------------------
+.normal {
+    color: #333333 !important;
+}
+
+.default {
+    color: #1171fd !important;
+}
+
+.highlight {
+    color: #ff7800;
+}
+
+.success,
+.running {
+    color: #03a922 !important;
+}
+
+.delete,
+.cancel,
+.error {
+    color: #fe0000 !important;
+}
+
+.warning,
+.info,
+.create {
+    color: #ff8e29;
+}
+
+.close,
+.creating {
+    color: #999999 !important;
+}
+
+.tip {
+    color: rgba(189, 216, 255, 1);
+}
+
+// --------------------- 按 钮 ---------------------
+@mixin btn-style($color, $bgColor) {
+    background-color: $bgColor;
+    color: $color;
+    padding: 0px !important;
+    width: 80px;
+    height: 36px;
+    border-radius: 2px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-color: transparent;
+}
+
+// 无样式
+.default-btn {
+    @include btn-style(#333, #fff);
+    border: 1px solid #dcdfe6;
+}
+
+// 默认样式
+.primary-btn {
+    @include btn-style(#fff, #1071fe);
+}
+
+// 操作按钮（灰色字体）
+.info-btn {
+    @include btn-style(#999, #eee);
+}
+
+// 取消按钮（白色字体）
+.cancel-btn {
+    @include btn-style(#fff, #bbb);
+}
+
+.warning-btn {
+    @include btn-style(#fff, #ff8f34);
+    width: 100px;
+    height: 60px;
+    border: 1px solid #ff8f34;
+}
+
+// 刷新按钮
+.refresh-icon {
+    padding: 0px !important;
+    width: 40px;
+    height: 36px;
+    flex-shrink: 0;
+    font-size: 20px;
+    background-color: #eeeeee;
+    border-radius: 2px;
+    color: #999999;
+    border: 1px solid rgba(238, 238, 238, 1);
+    cursor: pointer;
+}
+
+// 标题样式
+h1.title {
+    padding: 0px 20px 20px 0;
+    font-size: 16px;
+    color: #333333;
+    letter-spacing: 1px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+
+    span {
+        color: #1171fd;
+        font-size: 14px;
+        cursor: pointer;
+    }
+}
+
+// --------------------- 按 钮 ( 弹框及页面提交头部搜索) ---------------------
+.el-dialog__footer {
+    .primary-btn {
+        padding: 0px !important;
+        width: 100px;
+        height: 40px;
+        background: #1071fe;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 14px;
+        letter-spacing: 1px;
+        border-color: transparent;
+    }
+
+    .cancel-btn {
+        padding: 0px !important;
+        width: 100px;
+        height: 40px;
+        background: #bbb;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 14px;
+        letter-spacing: 1px;
+        border-color: transparent;
+    }
+}
+
+//弹框头部
+.el-dialog__header {
+    height: 50px;
+    line-height: 50px;
+    background-color: #1071fe;
+    padding-left: 20px;
+    padding-top: 0px;
+
+    .el-dialog__title {
+        font-size: 16px;
+        color: #ffffff;
+    }
+}
+
+.el-dialog__headerbtn .el-dialog__close {
+    color: #ffffff;
+}
+
+.el-dialog__headerbtn {
+    top: 17px;
+}
+
+.el-dialog__body {
+    .el-form-item {
+
+        // margin-bottom: 10px;
+        .el-form-item__content {
+            width: 402px;
+        }
+    }
+}
+
+.el-dialog__footer {
+    padding-top: 0px;
+    padding-bottom: 60px;
+}
+
+//其他样式
+
+// --------------------- flex布局 ---------------------
+// 方向
+.flex-row {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+// 分布
+.flex-auto {
+    flex: auto;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-shrink {
+    flex-shrink: 0;
+}
+
+@mixin flex($justify, $direction: row) {
+    display: flex;
+    align-items: center;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
+
+//水平方向(垂直居中)
+.row-center {
+    @include flex(center);
+}
+
+.row-start {
+    @include flex(flex-start);
+}
+
+.row-end {
+    @include flex(flex-end);
+}
+
+.row-around {
+    @include flex(space-around);
+}
+
+.row-between {
+    @include flex(space-between);
+}
+
+//垂直方向(水平居中)
+.column-center {
+    @include flex(center, column);
+}
+
+.column-start {
+    @include flex(flex-start, column);
+}
+
+.column-end {
+    @include flex(flex-end, column);
+}
+
+.column-around {
+    @include flex(space-around, column);
+}
+
+.column-between {
+    @include flex(space-between, column);
+}
+
+// -----------element-ui---------
+// 弹框提示
+.el-notification__content {
+    margin-top: 2px;
+}
+
+// 提示框
+.el-tooltip__popper {
+    max-width: 50%;
+}
+
+// input框
+.el-input__inner {
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+// 头部层级
+.el-header {
+    z-index: 999999;
+}
+
+// 侧边栏菜单
+.aside-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    height: 100%;
+
+    h5.menu-title {
+        font-size: 18px;
+        color: #333333;
+        line-height: 60px;
+        padding-left: 80px;
+        flex-shrink: 0;
+    }
+
+    .el-menu {
+        background-color: #f2f2f2;
+        border-right-width: 0px;
+        flex: auto;
+        overflow-y: scroll;
+    }
+
+    .el-submenu.is-opened>.el-submenu__title {
+        background-color: #fff;
+    }
+
+    .el-menu-item-group__title {
+        padding: 0;
+    }
+
+    .el-submenu__title {
+        font-size: 16px;
+        padding-left: 60px;
+    }
+
+    .el-submenu__title:focus,
+    .el-submenu__title:hover,
+    .el-menu-item:focus,
+    .el-menu-item:hover {
+        background: #fff;
+    }
+
+    .el-submenu .el-menu-item {
+        background: #fff;
+    }
+
+    .el-menu-item {
+        font-size: 16px;
+        line-height: 50px;
+        height: 50px;
+    }
+
+    .el-menu-item.is-active {
+        background: #fff;
+    }
+}
+
+//图片预览
+.img-show {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    display: flex;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background-color: rgba(1, 1, 1, 0.5);
+
+    img {
+        // width: 50%;
+        height: 50%;
+    }
+}
