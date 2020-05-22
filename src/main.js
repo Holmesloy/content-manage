@@ -5,18 +5,10 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import axios from 'axios'
+
+import './scss/global.scss'
 
 Vue.use(ElementUI);
-
-/* var url = process.env.API
-axios.get(url)
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  }); */
 
 Vue.config.productionTip = false
 
